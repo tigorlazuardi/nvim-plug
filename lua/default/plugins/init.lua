@@ -1,14 +1,13 @@
-vim.cmd([[
-	call plug#begin()
+vim.cmd([[call plug#begin()]])
 
-	" Tressitter
+-- Treesitter based plugins
+vim.cmd([[
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-	" Themes
 	Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-
-	call plug#end()
 ]])
+
+vim.cmd([[call plug#end()]])
 
 local util = require('personal.util')
 
