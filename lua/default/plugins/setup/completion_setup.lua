@@ -222,7 +222,7 @@ vim.keymap.set('n', '<leader>qs', function()
 end, {})
 for key, value in pairs(mappings) do
 	vim.keymap.set({ 'i', 's' }, key, value[1], {
-		description = value[2],
+		desc = value[2],
 		silent = true,
 	})
 end
