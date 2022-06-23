@@ -108,6 +108,27 @@ if get_userid() ~= '0' then
 	]])
 end
 
+-- completion and snippet
+vim.cmd([[
+	Plug 'hrsh7th/nvim-cmp'
+	Plug 'L3MON4D3/LuaSnip',
+	Plug 'f3fora/cmp-spell',
+	Plug 'hrsh7th/cmp-buffer',
+	Plug 'hrsh7th/cmp-emoji',
+	Plug 'ray-x/cmp-treesitter',
+	Plug 'hrsh7th/cmp-nvim-lsp',
+	Plug 'hrsh7th/cmp-path',
+	Plug 'hrsh7th/cmp-nvim-lua',
+	Plug 'lukas-reineke/cmp-rg',
+	Plug 'hrsh7th/cmp-nvim-lsp-signature-help',
+	" Plug 'onsails/lspkind-nvim',
+	Plug 'rafamadriz/friendly-snippets',
+	Plug 'saadparwaiz1/cmp_luasnip',
+	Plug 'windwp/nvim-autopairs',
+	" Plug 'mortepau/codicons.nvim',
+	Plug 'hrsh7th/cmp-cmdline',
+]])
+
 -- other plugins
 vim.cmd([[
 	Plug 'goolord/alpha-nvim' " Dashboard
