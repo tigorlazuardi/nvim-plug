@@ -3,7 +3,8 @@ vim.cmd([[
 	" Do not install plenary plugins. It broke integration with VSCode.
 
 	" Register Handlers
-	Plug 'gbprod/cutlass.nvim' " maps default delete operations to blackhole.
+	" maps default delete operations to blackhole.
+	Plug 'gbprod/cutlass.nvim'
 	Plug 'gbprod/substitute.nvim'
 	" Do not install Yanky, it vendors plenary.
 

@@ -12,13 +12,18 @@ vim.cmd([[
 vim.cmd([[
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-	Plug 'nvim-treesitter/nvim-treesitter-textobjects',
-	Plug 'p00f/nvim-ts-rainbow',
-	Plug 'lewis6991/spellsitter.nvim',
-	" Plug 'romgrk/nvim-treesitter-context',
-	Plug 'windwp/nvim-ts-autotag',
-	Plug 'RRethy/nvim-treesitter-endwise',
-	Plug 'nvim-treesitter/playground',
+	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+	Plug 'p00f/nvim-ts-rainbow'
+	Plug 'lewis6991/spellsitter.nvim'
+	" Plug 'romgrk/nvim-treesitter-context'
+	Plug 'windwp/nvim-ts-autotag'
+	Plug 'RRethy/nvim-treesitter-endwise'
+	Plug 'nvim-treesitter/playground'
+
+	Plug 'abecodes/tabout.nvim'
+
+	Plug 'SmiteshP/nvim-gps'
+	Plug 'mizlan/iswap.nvim'
 
 	" Treesitter Comment
 	Plug 'numToStr/Comment.nvim'
@@ -56,6 +61,13 @@ vim.cmd([[
 vim.cmd([[
 	Plug 'ibhagwan/fzf-lua'
 	Plug 'kyazdani42/nvim-web-devicons'
+
+	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+	Plug 'ahmedkhalf/project.nvim'
+	Plug 'Shatur/neovim-session-manager'
+	Plug 'LinArcX/telescope-env.nvim'
+	Plug 'folke/trouble.nvim'
 ]])
 
 if vim.fn.exepath('sk') == '' and vim.fn.exepath('fzf') == '' then
@@ -166,7 +178,7 @@ vim.cmd([[
 
 -------------- Null LS -----------------
 vim.cmd([[
-	Plug 'jose-elias-alvarez/null-ls.nvim'	
+	Plug 'jose-elias-alvarez/null-ls.nvim'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'nvim-lua/plenary.nvim'
 ]])
@@ -183,7 +195,7 @@ vim.cmd([[
 
 	" Discord presence
 	Plug 'andweeb/presence.nvim'
-	
+
 	" Filetype detection
 	Plug 'nathom/filetype.nvim'
 
@@ -192,9 +204,39 @@ vim.cmd([[
 
 	" Markdown
 	Plug 'ellisonleao/glow.nvim', {'for': 'markdown'}
+	Plug 'davidgranstrom/nvim-markdown-preview', {'for': 'markdown'}
 
 	" Delete buffer without changing layout
 	Plug 'famiu/bufdelete.nvim'
+
+	" Move lines by Alt and hjkl button
+	Plug 'booperlv/nvim-gomove',
+
+	" Move with s key.
+	Plug 'rlane/pounce.nvim'
+
+	" Search and Replace
+	Plug 'windwp/nvim-spectre'
+
+	Plug 'aserowy/tmux.nvim'
+
+	Plug 'akinsho/nvim-toggleterm.lua'
+
+	Plug 'folke/todo-comments.nvim'
+]])
+
+-- scrollbars
+vim.cmd([[
+	Plug 'petertriho/nvim-scrollbar'
+	Plug 'kevinhwang91/nvim-hlslens'
+	Plug 'folke/tokyonight.nvim'
+]])
+
+vim.g.sandwich_no_default_key_mapping = 1
+-- sandwich
+vim.cmd([[
+	" Replace pairs
+	Plug 'machakann/vim-sandwich'
 ]])
 
 vim.cmd([[call plug#end()]])
