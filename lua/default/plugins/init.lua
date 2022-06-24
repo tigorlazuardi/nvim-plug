@@ -25,9 +25,11 @@ vim.cmd([[
 	Plug 'JoosepAlviste/nvim-ts-context-commentstring', { 'for': ['typescriptreact', 'javascriptreact'] }
 ]])
 
--- Treesitter themes
+-- Catppuccin Theme
 vim.cmd([[
 	Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+	Plug 'nvim-lualine/lualine.nvim'
+	Plug 'kyazdani42/nvim-web-devicons'
 ]])
 
 -- Neo Tree
@@ -127,15 +129,72 @@ vim.cmd([[
 	Plug 'windwp/nvim-autopairs',
 	" Plug 'mortepau/codicons.nvim',
 	Plug 'hrsh7th/cmp-cmdline',
+	Plug 'zbirenbaum/copilot-cmp'
+	Plug 'zbirenbaum/copilot.lua'
+]])
+
+local copilot_cred_exist = (function()
+	local util = require('personal.util')
+	local loc = '$HOME/.config/github-copilot/hosts.json'
+	if util.is_windows then
+		loc = '$HOME/AppData/Local/github-copilot/hosts.json'
+	end
+	return loc
+end)()
+
+if not copilot_cred_exist then
+	vim.cmd([[
+		Plug 'github/copilot.vim'
+	]])
+end
+
+---------------- LSP ---------------
+vim.cmd([[
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'ray-x/lsp_signature.nvim'
+	Plug 'folke/lua-dev.nvim'
+	Plug 'folke/lsp-colors.nvim'
+	Plug 'nvim-lua/lsp_extensions.nvim'
+	Plug 'b0o/schemastore.nvim'
+	Plug 'kosayoda/nvim-lightbulb'
+	Plug 'williamboman/nvim-lsp-installer'
+	Plug 'j-hui/fidget.nvim'
+	Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+	Plug 'b0o/schemastore.nvim'
+	Plug 'simrat39/rust-tools.nvim'
+]])
+
+-------------- Null LS -----------------
+vim.cmd([[
+	Plug 'jose-elias-alvarez/null-ls.nvim'	
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'nvim-lua/plenary.nvim'
+]])
+
+-- User interface
+vim.cmd([[
+	Plug 'stevearc/dressing.nvim'
 ]])
 
 -- other plugins
 vim.cmd([[
-	Plug 'goolord/alpha-nvim' " Dashboard
-	Plug 'andweeb/presence.nvim' " Discord
-	Plug 'nathom/filetype.nvim' " Filetype detection
-	Plug 'beauwilliams/focus.nvim' " Auto window management
-	Plug 'ellisonleao/glow.nvim', {'for': 'markdown'} " Markdown
+	" Dashboard
+	Plug 'goolord/alpha-nvim'
+
+	" Discord presence
+	Plug 'andweeb/presence.nvim'
+	
+	" Filetype detection
+	Plug 'nathom/filetype.nvim'
+
+	" Auto window management
+	Plug 'beauwilliams/focus.nvim'
+
+	" Markdown
+	Plug 'ellisonleao/glow.nvim', {'for': 'markdown'}
+
+	" Delete buffer without changing layout
+	Plug 'famiu/bufdelete.nvim'
 ]])
 
 vim.cmd([[call plug#end()]])

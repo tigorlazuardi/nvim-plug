@@ -204,6 +204,7 @@ local mappings = {
 		'(Snippet) Prev Choice',
 	},
 }
+
 vim.keymap.set('n', '<leader>qs', function()
 	local dir = [[$HOME/.config/nvim/lua/snippets/luasnip/]]
 	local files = io.popen(string.format([[ls -a "%s"]], dir))
@@ -220,6 +221,7 @@ vim.keymap.set('n', '<leader>qs', function()
 	files:close()
 	vim.notify('Snippet reloaded', 'info', { title = 'System' })
 end, {})
+
 for key, value in pairs(mappings) do
 	vim.keymap.set({ 'i', 's' }, key, value[1], {
 		desc = value[2],
@@ -237,4 +239,17 @@ end
 view.close = function(self)
 	persistent_kind_length = 0
 	view.original_close(self)
+end
+
+if pcall(require, 'copilot') then
+	vim.api.nvim_create_autocmd('InsertEnter', {
+		pattern = '*',
+		callback = function()
+			vim.schedule(function()
+				require('copilot').setup()
+			end)
+		end,
+		once = true,
+		desc = 'Load Copilot upon InsertEnter (once)',
+	})
 end
