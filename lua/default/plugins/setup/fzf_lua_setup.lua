@@ -1,5 +1,9 @@
 local ok, fzf_lua = pcall(require, 'fzf-lua')
 
+if not ok then
+	return
+end
+
 fzf_lua.setup({
 	fzf_bin = vim.fn.exepath('sk') ~= '' and 'sk' or 'fzf',
 	winopts = {
