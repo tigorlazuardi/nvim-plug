@@ -229,7 +229,7 @@ for key, value in pairs(mappings) do
 	})
 end
 
-require('snippets.luasnip')
+require('default.snippets.luasnip')
 
 -- reset spacing on [source] handling
 local view = require('cmp.view')
