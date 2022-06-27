@@ -6,7 +6,7 @@ Neovim Configuration using [Vim-Plug](https://github.com/junegunn/vim-plug) as P
 
 # Requirements
 
-
+1. [CMake](https://cmake.org/). Usually available from your package manager on linux. On Windows, you may need to download the executable and install.
 
 # Installation
 
