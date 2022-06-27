@@ -151,7 +151,7 @@ local copilot_cred_exist = (function()
 	if util.is_windows then
 		loc = '$HOME/AppData/Local/github-copilot/hosts.json'
 	end
-	return loc
+	return vim.fn.filereadable(loc) == 1
 end)()
 
 if not copilot_cred_exist then
