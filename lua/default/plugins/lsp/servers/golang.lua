@@ -29,28 +29,27 @@ local opts = {
 			['<leader>gtF'] = { '<cmd>GoTestFile<cr>', 'Test Current File' },
 			['<leader>gtp'] = { '<cmd>GoTestPackage<cr>', 'Test Current Package' },
 			['<leader>gi'] = { '<cmd>GoImpl<cr>', 'Generate stub Implementation for Type from an interface' },
-			['<leader>gc'] = {
+			['<leader>gtc'] = {
 				function()
 					require('nvim-goc').ClearCoverage()
 				end,
 				'Clear Coverage',
 			},
-			['<leader>gr'] = {
+			['<leader>gtr'] = {
 				function()
 					require('nvim-goc').Coverage()
 				end,
 				'Coverage',
 			},
-			['<leader>gR'] = {
+			['<leader>gtR'] = {
 				function()
 					require('nvim-goc').CoverageFunc()
 				end,
 				'Coverage Func',
 			},
-			['<leader>ga'] = { '<cmd>GoAddTest<cr>', 'Generate test for function' },
-			['<leader>gA'] = { '<cmd>GoAddAllTest<cr>', 'Generate test for functions in file' },
+			['<leader>gta'] = { '<cmd>GoAddTest<cr>', 'Generate test for function' },
+			['<leader>gtA'] = { '<cmd>GoAddAllTest<cr>', 'Generate test for functions in file' },
 		}, { buffer = bufnr })
-		local wk = require('which-key')
 	end,
 	settings = {
 		gopls = {
