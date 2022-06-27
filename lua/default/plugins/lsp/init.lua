@@ -37,13 +37,13 @@ util.register_mapping({
 	['<leader>lr'] = { '<cmd>LspRestart<cr>', 'Lsp Restart' },
 	['<leader>lS'] = {
 		function()
-			for _, client in pair(vim.lsp.get_active_clients()) do
+			for _, client in pairs(vim.lsp.get_active_clients()) do
 				client.stop()
 			end
 		end,
 		'LSP Stop',
 	},
-	['<leader>ls'] = { '<cmd>lspStart<cr>', 'LSP Start' },
+	['<leader>ls'] = { '<cmd>LspStart<cr>', 'LSP Start' },
 })
 
 require('lsp_extensions').inlay_hints({
