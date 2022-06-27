@@ -15,6 +15,7 @@ filetype.setup({
 			['jsconfig.json'] = 'jsonc',
 			['mods.txt'] = 'javascript', -- rpgmaker mods.txt
 			['.rtorrent.rc'] = 'config',
+			['smb.conf'] = 'samba',
 		},
 		complex = {
 			['%.vscode/launch%.json'] = 'jsonc',
