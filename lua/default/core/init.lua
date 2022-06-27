@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd({ 'DirChanged', 'VimEnter' }, {
 local c = vim.api.nvim_command
 c('set ignorecase') -- case insensitive search
 c('set shada="NONE"')
+c('set noswapfile')
 require('default.core.visuals')
 require('default.core.neovide')
 require('default.core.window')
